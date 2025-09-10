@@ -9,12 +9,13 @@ import SwiftUI
 
 struct HeaderView: View {
     @Binding var tasks: [Task]
+
     @State var enteredText: String = ""
     var body: some View {
         HStack {
             TextField("Add a new task", text: $enteredText)
             Button{
-                var enteredTextTask = Task(nameOfTask: enteredText)
+                let enteredTextTask = Task(nameOfTask: enteredText)
                 tasks.append(enteredTextTask)
                 enteredText = ""
             } label:{
