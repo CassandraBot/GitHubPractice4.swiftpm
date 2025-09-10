@@ -14,12 +14,14 @@ struct HeaderView: View {
     var body: some View {
         HStack {
             TextField("Add a new task", text: $enteredText)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
             Button{
                 let enteredTextTask = Task(nameOfTask: enteredText)
                 tasks.append(enteredTextTask)
                 enteredText = ""
             } label:{
                 Text("Add")
+                    .foregroundStyle(.blue)
             }
             
         }
